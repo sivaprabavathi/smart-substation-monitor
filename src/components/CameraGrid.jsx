@@ -1,14 +1,13 @@
-import { useState, useEffect } from 'react';
-import '../styles/CameraGrid.css';
+import { useState, useEffect } from "react";
+import "../styles/CameraGrid.css";
 
-import camerafeed1 from '../assets/camera-feed-1.jpg';
-import camerafeed2 from '../assets/camera-feed-2.jpg';
-import camerafeed3 from '../assets/camera-feed-3.jpg';
-import camerafeed4 from '../assets/camera-feed-4.jpg';
+import camerafeed1 from "../assets/camera-feed-1.jpg";
+import camerafeed2 from "../assets/camera-feed-2.jpg";
+import camerafeed3 from "../assets/camera-feed-3.jpg";
+import camerafeed4 from "../assets/camera-feed-4.jpg";
 import { FaVideo } from "react-icons/fa";
 
 function CameraGrid() {
-
   const [showLiveStream, setShowLiveStream] = useState(false);
   const [selectedCamera, setSelectedCamera] = useState(null);
   const [time, setTime] = useState(new Date());
@@ -25,40 +24,40 @@ function CameraGrid() {
   const cameras = [
     {
       id: 1,
-      name: 'CAM-01 Transformer Bay',
-      location: 'Zone A - North',
-      status: 'active',
+      name: "CAM-01 Transformer Bay",
+      location: "Zone A - North",
+      status: "active",
       alert: false,
-      type: 'Night Vision',
-      image: camerafeed1
+      type: "Night Vision",
+      image: camerafeed1,
     },
     {
       id: 2,
-      name: 'CAM-02 Switchgear Room',
-      location: 'Zone B - Indoor',
-      status: 'active',
+      name: "CAM-02 Switchgear Room",
+      location: "Zone B - Indoor",
+      status: "active",
       alert: true,
-      type: 'Night Vision',
-      image: camerafeed2
+      type: "Night Vision",
+      image: camerafeed2,
     },
     {
       id: 3,
-      name: 'CAM-03 Thermal Imaging',
-      location: 'Zone A - Panels',
-      status: 'active',
+      name: "CAM-03 Thermal Imaging",
+      location: "Zone A - Panels",
+      status: "active",
       alert: false,
-      type: 'Thermal',
-      image: camerafeed3
+      type: "Thermal",
+      image: camerafeed3,
     },
     {
       id: 4,
-      name: 'CAM-04 Control Panel',
-      location: 'Zone C - Main',
-      status: 'active',
+      name: "CAM-04 Control Panel",
+      location: "Zone C - Main",
+      status: "active",
       alert: false,
-      type: 'Standard',
-      image: camerafeed4
-    }
+      type: "Standard",
+      image: camerafeed4,
+    },
   ];
 
   /* ---------- REUSABLE LIVE UI ---------- */
@@ -68,9 +67,7 @@ function CameraGrid() {
         <span className="live-dot"></span>
         LIVE
       </div>
-      <div className="camera-mode">
-        {type}
-      </div>
+      <div className="camera-mode">{type}</div>
     </div>
   );
 
@@ -81,7 +78,6 @@ function CameraGrid() {
   if (showLiveStream) {
     return (
       <div className="camera-grid-container">
-
         <div className="section-header">
           <h2>📹 Live Camera Monitoring</h2>
 
@@ -98,9 +94,9 @@ function CameraGrid() {
         </div>
 
         <div className="live-stream-wrapper">
-          <iframe
-            src="http://192.168.137.60"
-            title="ESP32 Live Stream"
+          <img
+            src="http://192.168.137.60/stream"
+            alt="ESP32 Live Stream"
             className="live-stream-frame"
           />
         </div>
@@ -113,12 +109,10 @@ function CameraGrid() {
   ======================================================= */
 
   if (selectedCamera) {
-
-    const camera = cameras.find(c => c.id === selectedCamera);
+    const camera = cameras.find((c) => c.id === selectedCamera);
 
     return (
       <div className="camera-grid-container">
-
         <div className="section-header">
           <h2>📹 Live Camera Monitoring</h2>
 
@@ -141,7 +135,6 @@ function CameraGrid() {
         >
           <div className="camera-feed">
             <div className="camera-placeholder">
-
               <img
                 src={camera.image}
                 alt={camera.name}
@@ -158,12 +151,9 @@ function CameraGrid() {
 
               {camera.alert && (
                 <div className="alert-overlay">
-                  <div className="alert-box">
-                    ⚠️ Anomaly Detected
-                  </div>
+                  <div className="alert-box">⚠️ Anomaly Detected</div>
                 </div>
               )}
-
             </div>
           </div>
 
@@ -189,7 +179,6 @@ function CameraGrid() {
 
   return (
     <div className="camera-grid-container">
-
       <div className="section-header">
         <h2>📹 Live Camera Monitoring</h2>
 
@@ -207,16 +196,14 @@ function CameraGrid() {
       </div>
 
       <div className="camera-grid">
-        {cameras.map(camera => (
-
+        {cameras.map((camera) => (
           <div
             key={camera.id}
-            className={`camera-card ${camera.alert ? 'alert' : ''}`}
+            className={`camera-card ${camera.alert ? "alert" : ""}`}
             onClick={() => setSelectedCamera(camera.id)}
           >
             <div className="camera-feed">
               <div className="camera-placeholder">
-
                 <img
                   src={camera.image}
                   alt={camera.name}
@@ -233,12 +220,9 @@ function CameraGrid() {
 
                 {camera.alert && (
                   <div className="alert-overlay">
-                    <div className="alert-box">
-                      ⚠️ Anomaly Detected
-                    </div>
+                    <div className="alert-box">⚠️ Anomaly Detected</div>
                   </div>
                 )}
-
               </div>
             </div>
 
@@ -253,7 +237,6 @@ function CameraGrid() {
                 {camera.status}
               </div>
             </div>
-
           </div>
         ))}
       </div>
