@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "../styles/FireAlert.css";
 
-const ESP32_IP = "http://192.168.137.60"; // your device IP
+const ESP32_IP = "http://192.168.137.55"; // your device IP
 
 function FireAlert() {
   const [fire, setFire] = useState(false);

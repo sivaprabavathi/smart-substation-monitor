@@ -95,7 +95,7 @@ function CameraGrid() {
 
         <div className="live-stream-wrapper">
           <img
-            src="http://192.168.137.60/stream"
+            src="http://192.168.137.55/stream"
             alt="ESP32 Live Stream"
             className="live-stream-frame"
           />
