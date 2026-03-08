@@ -1,0 +1,55 @@
+/* ================================
+   FIRE ALERT OVERLAY (SCREEN FLASH)
+================================ */
+
+.fire-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(239, 68, 68, 0.08);
+  backdrop-filter: blur(2px);
+  z-index: 9998;
+  pointer-events: none;
+  animation: fireFlash 1.2s ease-in-out infinite;
+}
+
+@keyframes fireFlash {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.35; }
+}
+
+/* ================================
+   FIRE TOAST ENHANCEMENT
+================================ */
+
+.fire-toast {
+  border: 2px solid #ef4444;
+  box-shadow:
+    0 0 25px rgba(239, 68, 68, 0.7),
+    0 0 60px rgba(239, 68, 68, 0.4);
+}
+
+/* Blinking dot */
+.fire-toast .toast-dot {
+  animation: fireDotBlink 0.6s infinite;
+}
+
+@keyframes fireDotBlink {
+  0% { opacity: 1; }
+  50% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
+/* ================================
+   FIRE TITLE ANIMATION
+================================ */
+
+.fire-title {
+  color: #ef4444;
+  letter-spacing: 1px;
+  animation: fireTextPulse 1s ease-in-out infinite;
+}
+
+@keyframes fireTextPulse {
+  0%, 100% { text-shadow: 0 0 6px #ef4444; }
+  50% { text-shadow: 0 0 16px #ef4444; }
+}

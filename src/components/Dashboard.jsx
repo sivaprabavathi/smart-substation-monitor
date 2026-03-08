@@ -5,10 +5,12 @@ import AlertPanel from './AlertPanel';
 import PowerControl from './PowerControl';
 import Footer from './Footer';
 import '../styles/Dashboard.css';
+import FireAlert from './FireAlert';
 
 function Dashboard() {
   return (
     <div className="dashboard">
+      <FireAlert />
       <Navbar />
 
       <main className="dashboard-main">
