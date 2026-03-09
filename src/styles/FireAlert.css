@@ -1,55 +1,37 @@
-/* ================================
-   FIRE ALERT OVERLAY (SCREEN FLASH)
-================================ */
+/* ===============================
+   MANUAL FIRE TEST BUTTON
+================================= */
 
-.fire-overlay {
+.fire-test-panel {
   position: fixed;
-  inset: 0;
-  background: rgba(239, 68, 68, 0.08);
-  backdrop-filter: blur(2px);
-  z-index: 9998;
-  pointer-events: none;
-  animation: fireFlash 1.2s ease-in-out infinite;
+  bottom: 18px;
+  left: 18px;
+  z-index: 9999;
 }
 
-@keyframes fireFlash {
-  0%, 100% { opacity: 0.15; }
-  50% { opacity: 0.35; }
+.fire-test-btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
 }
 
-/* ================================
-   FIRE TOAST ENHANCEMENT
-================================ */
+.fire-test-btn:hover {
+  transform: translateY(-2px);
+  border-color: #ef4444;
+}
 
-.fire-toast {
-  border: 2px solid #ef4444;
+.fire-test-btn.active {
+  background: linear-gradient(135deg, #ef4444, #991b1b);
+  color: #fff;
+  border-color: #ef4444;
   box-shadow:
-    0 0 25px rgba(239, 68, 68, 0.7),
-    0 0 60px rgba(239, 68, 68, 0.4);
-}
-
-/* Blinking dot */
-.fire-toast .toast-dot {
-  animation: fireDotBlink 0.6s infinite;
-}
-
-@keyframes fireDotBlink {
-  0% { opacity: 1; }
-  50% { opacity: 0.2; }
-  100% { opacity: 1; }
-}
-
-/* ================================
-   FIRE TITLE ANIMATION
-================================ */
-
-.fire-title {
-  color: #ef4444;
-  letter-spacing: 1px;
-  animation: fireTextPulse 1s ease-in-out infinite;
-}
-
-@keyframes fireTextPulse {
-  0%, 100% { text-shadow: 0 0 6px #ef4444; }
-  50% { text-shadow: 0 0 16px #ef4444; }
+    0 0 15px rgba(239,68,68,0.7),
+    0 0 40px rgba(239,68,68,0.4);
 }

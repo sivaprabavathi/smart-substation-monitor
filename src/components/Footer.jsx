@@ -12,7 +12,7 @@ function Footer() {
         {/* ================= PROJECT INFO ================= */}
         <div className="footer-section">
           <h3 className="footer-title">
-            SMART SUBSTATION SURVEILLANCE AND REMOTE SWITCHING SYSTEM USING ESP32-CAM
+            Integrated IOT Surveillance, Fire Detection and Remote Switching Solution for Smart Power Substations
           </h3>
 
           <p className="footer-sub">
